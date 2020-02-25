@@ -1,0 +1,98 @@
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+        <!-- webapp settings -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        
+        <title>Christopher Burke</title>
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+        
+        
+        
+        <link href="css/responsiveFonts.css" type="text/css" rel="stylesheet">
+        <link href="css/websites_apps.css" type="text/css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/websites_apps.js"></script>
+        
+    </head>
+
+    <body>
+        
+        <div class="activeGrid">
+            <div class="activeContent">
+<!--                generated based on currently viewed item-->
+            </div>
+        </div>
+        
+        <div class="headerCont">
+            <div class="headerLeft">
+                <img class="logo" src="images/chrisLogoWhite.png" />
+                <p class="name">Christopher Burke</p>
+            </div>
+            <div class="mobileHeaderRight">
+                <img class="returnArrow" src="images/arrow.png">
+                <p class="context">Return</p>
+            </div>
+            <div class="headerRight">
+                <div class="linksCont">
+                    <p class="links">Projects</p>
+                </div>
+                <div class="linksCont">
+                    <p class="links">About</p>
+                </div>
+                <div class="linksCont">
+                    <p class="links" id="contact">Contact</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menuGrid">
+            <div class="menuCont">
+                <p class="f-lg menuHeader">Beacon Mobile</p>
+                <p class="f-sm menuInfo">
+                    During my internship at Schneider Geospatial, I worked alongside the Beacon dev team to conceptualize and implement an app for their web service which involved over 50 different mockups. Next, I worked with a fellow software development intern to bring the app to fruition through React Native.
+                </p>
+                <button class="f-sm explore">Learn More</button> 
+                <div class="menuControlsCont">
+                    <div class="menuArrowsCont">
+                        <img class="menuArrow" src="images/arrow.png">
+                        <img class="menuArrow flipped" src="images/arrow.png">
+                    </div>
+                    <p class="f-xs arrowInfo">Prev/Next</p>
+                </div>
+            </div>
+            <div class="menuImgCont">
+                <img class="menuImg" src="images/beacon-mobile1.png"/>
+            </div>
+        </div>
+        
+        <div class="exitFSCont">
+            <p class="f-sm exitFS" src="images/exitFS.png" alt="Exit Full Screen">View Websites | Apps</p>
+        </div>
+        
+        
+        
+        <!-- For IE (Since many of the features I use currently are not compatable) -->
+        <!-- Code taken from Alvaro Aneiros https://jsfiddle.net/alvaroAV/svvz7tkn/ -->
+        <script type="text/javascript">
+            /* Sample function that returns boolean in case the browser is Internet Explorer*/
+            function isIE() {
+              ua = navigator.userAgent;
+              /* MSIE used to detect old browsers and Trident used to newer ones*/
+              var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+
+              return is_ie; 
+            }
+            /* Remove content and show message if IE */
+            if (isIE()){
+                $("body").html("<p class='f-md' style='padding: 20px; font-family: LatoBold'>My website is not yet supported on Internet Explorer. Please use Google Chrome, Firefox, or Microsoft Edge to properly view this website. Sorry for the inconvenience!</p>");  
+            }
+        </script>
+        
+    </body>
+
+</html>

@@ -1,0 +1,461 @@
+<html>
+
+    <head>
+        
+        <!--        jquery      -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <!--        fullPage Library      -->
+        <script src="js/jquery.fullPage.js"></script>
+        <script>
+        
+            //using fullpage library for css changes
+            $(document).ready(function() {
+                
+                $('#scroll1').click(function(){        
+                    $.fn.fullpage.moveTo(2);
+                });
+                
+                $('#scroll2').click(function(){        
+                    $.fn.fullpage.moveTo(3);
+                });
+                
+                $('#scroll3').click(function(){        
+                    $.fn.fullpage.moveTo(4);
+                });
+                
+                $('#scroll4').click(function(){        
+                    $.fn.fullpage.moveTo(5);
+                });
+                
+                $('#scroll5').click(function(){        
+                    $.fn.fullpage.moveTo(6);
+                });
+                
+                //when I click scroll arrow on Section 1, move me to Section 2
+                
+                $('#fullpage').fullpage({
+                    
+                    onLeave: function(index, nextIndex, direction) {
+                        
+                        var leavingSection = $(this);
+                        
+                        //Changing CSS Properties on Section Scroll----------------------|
+  
+                        
+                        //SECTION 1 GOING DOWN
+                        if (index == 1 && direction == 'down') {
+                            
+                            //timer icon appears
+                            $('#timer').delay( 500 ).queue(function (next) { 
+                                $(this).css('opacity', '1'); 
+                                next();
+                            });
+                            
+                            //rules icon appears
+                            $('#rules').delay( 750 ).queue(function (next) { 
+                                $(this).css('opacity', '1'); 
+                                next();
+                            });
+               
+                        }
+                        
+                        
+                        //SECTION 2 GOING DOWN
+                        if (index == 2 && direction == 'down') {
+                            
+                            //icons move in from right
+                            $('#gameplayIconCont').children().each(function(){
+
+                                //delay when each icon enters based on index position
+                                $(this).delay( 650 + 650 * $(this).index() ).queue(function (next) { 
+                                    $(this).css('right', '11%'); 
+                                    next();
+                                });
+
+                            });
+                            
+                            //slider appearance
+                            $('#slider').delay( 1000 ).queue(function (next) { 
+                                    $(this).css('opacity', 1); 
+                                    next();
+                            });
+                            
+                            $('.arrow').delay( 750 ).queue(function (next) { 
+                                    $(this).css('opacity', 1); 
+                                    next();
+                            });
+                            
+                           
+                            
+                        }
+                        
+                        //SECTION 3 GOING DOWN
+                        if (index == 3 && direction == 'down') {
+                            $('#welcome').css({
+                                'top': '23%',
+                                'opacity': 1,
+                            });
+
+                            $('#narrativeCont').css({
+                                'opacity': 1,
+                            });
+                        }
+
+                        //SECTION 4 GOING DOWN
+                        if (index == 4 && direction == 'down') {
+                            
+                            //sil delay appearances (sil = silhouette)
+                            $('#silCont').children().each(function(){
+
+                                $(this).delay( 500 + 500 * $(this).index() ).queue(function (next) { 
+                                    $(this).css('opacity', 1); 
+                                    next();
+                                });
+                                
+                            });
+                            
+                            //delay hover ability until all sil are shown
+                            $('#silDelayHover').delay(3500).queue(function (next) { 
+                                $(this).css('display', 'none'); 
+                                next();
+                            });
+               
+                        }
+                        
+                        //SECTION 5 GOING DOWN
+                        if (index == 5 && direction == 'down') {
+                            
+                            //delay hover ability until all sil are shown
+                            $('#merchNarrativeCont').delay(500).queue(function (next) { 
+                                $(this).css('left', '2%'); 
+                                next();
+                            });
+                            
+                            $('#merchInfoCont').css('top', '15%'); 
+               
+                        }
+                        
+                        //---------------------------------------------------------------|
+                        
+                        
+                        //Allows Scrolling From Bottom - Top
+                        window.requestAnimFrame = function(){
+                            return window.requestAnimationFrame ||
+                                window.webkitRequestAnimationFrame ||
+                                window.mozRequestAnimationFrame ||
+                                window.oRequestAnimationFrame ||
+                                window.msRequestAnimationFrame ||
+                                function(callback){ callback() }
+                        }();
+                        
+                        requestAnimFrame(function(){
+                            
+                            if (index == 6 && direction == 'down') {   
+                                $.fn.fullpage.moveTo(1);
+                            }
+                            
+                        });
+                        
+                    }
+ 
+                });
+                
+            });
+            
+        </script>
+        
+        <!--        fullPage Library      -->
+        <script src="js/meltdown_website.js"></script>
+        
+        <!--       CSS      -->
+        <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
+        <link rel="stylesheet" type="text/css" href="css/meltdown_website.css">
+        
+    </head>
+    
+    <body>
+        
+        
+        <div id="fullpage">
+
+            <div class="section active" id="sec1">
+                
+                <a href="https://twitter.com/Meltdown_Game" target="_blank"><img id="twitter" src="images/twitter_logo.png"></a>
+                <a href="https://instagram.com/meltdownboardgame?utm_source=ig_profile_share&igshid=18sn67oh0wzyf" target="_blank"><img id="instagram" src="images/instagram_logo.png"></a>
+                <p id="email"><em>meltdownboardgame@gmail.com</em></p>
+                
+                <div class="scrollClick" id="scroll1">
+                    <div class="scroll-down"></div>
+                </div>
+
+                <div id="landingImageCont">
+                    <img id="landingImage" src="images/landing_image-01.png">
+                </div>
+ 
+            </div>
+
+
+            <div class="section" id="sec2">
+                
+                <div class="scrollClick" id="scroll2">
+                    <div class="scroll-down"></div>
+                </div>
+
+                <div class="whiteSlider" id="timerSlider"></div>
+
+                <a id="timerCont" href="https://meltdownboardgame.com/timer.html" target="_blank">
+                    <img class="cta" id="timer" src="images/timer.png" alt="timer">
+                </a>
+
+                <div class="whiteSlider" id="rulesSlider"></div>
+
+                <a id="rulesCont" href="documents/meltdown_rules.pdf" target="_blank">
+                    <img class="cta" id="rules" src="images/rules.png" alt="rules">
+                </a>
+
+            </div>
+
+
+            <div class="section" id="sec3">
+                
+                <div class="scrollClick" id="scroll3">
+                    <div class="scroll-down"></div>
+                </div>
+
+                <div id="gameplayIconCont">
+
+                    <img class="gameplayIcon" id="age" src="images/Gameplay%20Icon1.png" alt="Age 9+">
+
+                    <img class="gameplayIcon" id="players" src="images/Gameplay%20Icon2.png" alt="4-6 Players">
+
+                    <img class="gameplayIcon" id="time" src="images/Gameplay%20Icon3.png" alt="30 Minutes">
+
+                </div>
+
+                <img class="arrow" id="leftArrow" src="images/arrow_left.png" alt="Prev">
+                <img class="arrow" id="rightArrow" src="images/arrow_right.png" alt="Next">
+                
+                <div id="slider">
+
+                    <div id="boardImagesCont">
+                        <img class="boardImages" src="images/boardImage1.png">
+                        
+                    </div>
+
+                 </div>
+
+            </div>
+
+
+            <div class="section" id="sec4">
+                
+                <div class="scrollClick" id="scroll4">
+                    <div class="scroll-down"></div>
+                </div>
+                
+                <div class="infoCont" id="info1">
+                    <h2 id="welcome"> Welcome to Meltdown </h2>
+
+                    <div id="narrativeCont">
+                        <h2 id="narrative"> 
+                            Meltdown is a game of stress and speed. With only thirty minutes to escape before the facility is vaporized, all players will be rolling their dice at the same time in order to progress through the facility and reach the teleporter. Everyone will be constantly battling for control, and if you can hold your ground for 5 minutes while the teleporter charges, you will escape, leaving the others to their doomed fate. 
+                        </h2>
+                    </div>
+                    
+                    <img id="plantMonster" src="images/plantMonster.png">
+                    
+                </div>
+                
+                <div class="infoCont" id="info2">
+                    <h2 id="whatHappened"> So What Happened? </h2>
+
+                    <div id="narrativeCont2">
+                        <h2 id="narrative2">
+                            The scientists had a &#39;bring your pet to work&#39; day and, as expected, it went horribly wrong. One of the pets destroyed a crucial component that was maintaining the nuclear reactor!
+                        </h2>
+                    </div>
+                    
+                    <h2 id="badIcarus">
+                            Bad Icarus!
+                    </h2>
+                    
+                    <img id="pet" src="images/pet.gif">
+                    <img id="petStatic" src="images/pet.png">
+                    
+                </div>
+                
+                <div class="infoCont" id="info3">
+                    <h2 id="onlyOne"> Only One Will Escape </h2>
+
+                    <div id="narrativeCont3">
+                        <h2 id="narrative3"> 
+                            The teleporter is in the center of the facility, and only has enough charge left for a single person. Hope you are ready to fight, because that teleporter is your only way out. It&#39;s time to test your luck. Oh ya... be careful. There is also a rat army. Thanks Rattus...
+                        </h2>
+                    </div>
+                    
+                    <img id="ratArmy" src="images/ratArmy.png">
+                    
+                </div>
+                
+                <div class="infoCont" id="info4">
+                    <h2 id="unforeseenChanges"> Some Unforeseen Changes </h2>
+
+                    <div id="narrativeCont4">
+                        <h2 id="narrative4"> 
+                            This facility and its occupants had questionable traits to begin with, but thanks to the initial explosion, these scientists now find themselves in an especially deadly situation. The creatures that were once contained in their labs have escaped, and the chemicals that were once carefully isolated are now mixing. Many obstacles now stand in the way of a successful escape. 
+                        </h2>
+                    </div>
+                    
+                    <img id="shark" src="images/shark.png">
+                    
+                </div>
+                
+                <div id="switchCont">
+                
+                    <div class="switch" id="s1"></div>
+                    <div class="switch" id="s2"></div>
+                    <div class="switch" id="s3"></div>
+                    <div class="switch" id="s4"></div>
+                
+                </div>
+
+            </div>
+            
+            
+            
+            <div class="section" id="sec5">
+                
+                <div class="scrollClick" id="scroll5">
+                    <div class="scroll-down"></div>
+                </div>
+
+                <img id="board" src="images/board/full_board.png">
+
+                <div id="silCont">
+
+                    <img src="images/sil/char0.png" class="silSize" id="sil0">
+                    <img src="images/sil/char1.png" class="silSize" id="sil1">
+                    <img src="images/sil/char2.png" class="silSize" id="sil2">
+                    <img src="images/sil/char3.png" class="silSize" id="sil3">
+                    <img src="images/sil/char4.png" class="silSize" id="sil4">
+                    <img src="images/sil/char5.png" class="silSize" id="sil5">
+
+                </div>
+                
+                <div id="silDelayHover"></div>
+
+                <div id="charInfoCont">
+                    
+                    <div class="charSlide"> 
+
+                        <img class="charArrow" id="charLeftArrow" src="images/arrow_left.png">
+                        <img class="charArrow" id="charRightArrow" src="images/arrow_right.png">
+
+                        <img src="images/full_color_char/char0.png" class="charSize" id="charInfoImg">
+
+                        <img id="boardLocation" src="images/board/section_highlight0.png">
+
+                        <div id="charTextCont">
+
+                            <h2 id="charTitle"></h2>
+
+                            <p id="charNarrative"></p>
+
+                        </div>
+
+                    </div>
+                    
+                    <div id="labMenuCont">
+                    
+                        <ul id="labMenu">
+                        
+                            <li class="lab" id="lab0">Biology Lab</li>
+                            <li class="lab" id="lab1">Botany Lab</li>
+                            <li class="lab" id="lab2">Physics Lab</li>
+                            <li class="lab" id="lab3">Hazard Lab</li>
+                            <li class="lab" id="lab4">Hydrology Lab</li>
+                            <li class="lab" id="lab5">Solar Lab</li>
+
+                        </ul>
+                        
+                        <div id="closeCont">
+                        
+                                <img id="close" src="images/close.png">
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div class="section" id="sec6">
+                
+                <img id="bg1" src="images/footer.png">
+                <img id="bg2" src="images/footer.png">
+
+                <img class="arrow" id="leftArrow2" src="images/arrow_left.png" alt="Prev">
+                <img class="arrow" id="rightArrow2" src="images/arrow_right.png" alt="Next">
+                
+                <div id="slider2">
+
+                    <div id="merch">
+                        <img class="merchImages" src="images/MeltdownHoodie.png">
+                        <img class="merchImages" src="images/MeltdownCap.png">
+                        <img class="merchImages" src="images/MeltdownShirt.png">
+                        <img class="merchImages" src="images/MeltdownStickers.png">
+                        
+                    </div>
+
+                 </div>
+                
+                <div id="merchInfoCont">
+                    <h2 id="merchHeader"> Awesome Meltdown Merch </h2>
+
+                    <div id="merchNarrativeCont">
+                        <h2 id="merchNarrative"> 
+                            Become a dedicated Meltdown member. Don&#39;t worry, we won't judge if your favorite character is Dr. Son Jr. 
+                        </h2>
+                        
+                        <h2 id="textArrow"> 
+                            --------------------------------->
+                        </h2>
+                    </div>
+
+                </div>
+                
+                <div id="socialMedia2">
+                
+                    <a href="https://twitter.com/Meltdown_Game" target="_blank"><img id="twitter2" src="images/twitter_logo.png"></a>
+                    <a href="https://instagram.com/meltdownboardgame?utm_source=ig_profile_share&igshid=18sn67oh0wzyf" target="_blank"><img id="instagram2" src="images/instagram_logo.png"></a>
+                
+                </div>
+                
+                <div id="purchaseCTA"> 
+                        <h2 id="t1">If you&#39;d like to purchase anything, please email us at:</h2> 
+                    
+                        <p><em>meltdownboardgame@gmail.com</em></p>
+                </div>
+                    
+                
+            </div>
+
+            
+            
+            <div class="section" id="blankSec">
+
+                <!--     Left Blank To Allow Scrolling From Bottom Section Back To Top Section       -->
+
+            </div>
+
+        </div>
+        
+    </body>
+    
+</html>
+
+
+
+

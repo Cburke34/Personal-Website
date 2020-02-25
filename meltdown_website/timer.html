@@ -1,0 +1,152 @@
+<html>
+
+    <head>
+        
+        <!--        jquery      -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <!--        Fullscreen Library (Used When Pressing Play Button)      -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/4.0.1/screenfull.js"></script>
+        
+        <!--        Timer JS/Jquery      -->
+        <script src="js/meltdown_timer_no_sound.js"></script>
+        
+        <!--        Timer CSS      -->
+        <link rel="stylesheet" type="text/css" href="css/meltdown_timer.css">
+  
+    </head>
+    
+    <body>
+    
+        <a href="https://meltdownboardgame.com">
+            <h1 id="gameTitle">MELTDOWN</h1>
+        </a>
+        <h1 id="titleNuke">NUCLEAR</h1>
+        <h1 id="titleTele">TELEPORTER</h1>
+        <h3 class="messageToggle" id="fullscreenMessage">Press Esc to exit fullscreen</h3>
+        <div id="blackBar"></div>
+        <div id="grayBox">
+            
+            <h3 id="grayBoxMessage">Start Nuclear Timer To Begin</h3>
+        
+        </div>
+        
+<!--
+        <audio id="soundTele" loop>
+          <source src="images/timerSoundTele.mp3" type="audio/mp3">
+        </audio>
+        
+        <audio id="soundNuke" loop>
+          <source src="images/timerSoundNuke.mp3" type="audio/mp3">
+        </audio>
+        
+-->
+        <div id="bgNuke"></div>
+        <div id="bgTele"></div>
+        <h2 id="pausedMessageNuke">Paused</h2>
+        <h2 id="pausedMessageTele">Paused</h2>
+        
+<!--        Timer 30:00---------------------------------------------------------------------------------------------------->
+        
+        
+        <div id="contNuke">
+        
+            <div class="glowNuke" id="timerHolderNuke"></div>
+
+            <div class="btnMidNuke" id="btnMid1Nuke">
+
+                <div id="playContNuke">
+
+                    <div id="playIconNuke"></div>
+
+                </div>
+
+                <div id="pauseContNuke">
+
+                    <div class="pauseBarNuke"id="pauseBar1Nuke"></div>
+                    <div class="pauseBarNuke" id="pauseBar2Nuke"></div>
+
+                </div>
+
+            </div>
+
+            <div class="btnMidNuke" id="btnMid2Nuke">
+
+                <div id="restartContNuke">
+
+                    <img id="restartIconNuke" src="images/restart.svg" alt="restart"/>
+
+                </div>
+
+            </div>
+            
+        </div>
+<!-------------------------------------------------------------------------------------------------------------------------->
+     
+        
+<!--Universal Pause/Play-->
+        <div class="btnMid" id="btnMid1">
+
+                <div id="playCont">
+
+                    <div id="playIcon"></div>
+
+                </div>
+
+                <div id="pauseCont">
+
+                    <div class="pauseBar" id="pauseBar1"></div>
+                    <div class="pauseBar" id="pauseBar2"></div>
+
+                </div>
+            
+                <div id="restartCont">
+
+                    <img id="restartIcon" src="images/restart.svg" alt="restart"/>
+
+                </div>
+
+        </div>
+<!------------------------>
+        
+        
+<!--        Timer 5:00---------------------------------------------------------------------------------------------------->
+        
+        
+        <div id="contTele">
+        
+            <div class="glowTele" id="timerHolderTele"></div>
+
+            <div class="btnMidTele" id="btnMid1Tele">
+
+                <div id="playContTele">
+
+                    <div id="playIconTele"></div>
+
+                </div>
+
+                <div id="pauseContTele">
+
+                    <div class="pauseBarTele"id="pauseBar1Tele"></div>
+                    <div class="pauseBarTele" id="pauseBar2Tele"></div>
+
+                </div>
+
+            </div>
+
+            <div class="btnMidTele" id="btnMid2Tele">
+
+                <div id="restartContTele">
+
+                    <img id="restartIconTele" src="images/restart.svg" alt="restart"/>
+
+                </div>
+
+            </div>
+            
+        </div>
+<!-------------------------------------------------------------------------------------------------------------------------->
+
+    </body>
+    
+</html>

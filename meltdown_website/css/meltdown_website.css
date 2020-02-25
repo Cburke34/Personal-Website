@@ -1,0 +1,815 @@
+@font-face {
+  font-family: daysLater;
+  src: url(../fonts/28DaysLater.ttf);
+}            
+
+@font-face {
+  font-family: digitalClock;
+  src: url(../fonts/Open24DisplaySt.ttf);
+}
+
+@font-face {
+  font-family: centuryGothic;
+  src: url(../fonts/centuryGothic.ttf);
+}
+
+@font-face {
+  font-family: centuryGothicBold;
+  src: url(../fonts/gothicb.ttf);
+}
+
+body {
+    margin: 0px;
+    position:relative;
+    overflow:hidden;
+}
+
+h2 {
+    padding: 0px;
+    margin: 0px;
+}
+
+p {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/* Section 1 -------------------------------------------------------------------------------------------- */
+#landingImageCont{
+    position: relative;
+}
+
+#landingImage{ 
+    width: 100%;
+    height: 100%;
+}
+
+#email {
+    position: absolute;
+    z-index: 999;
+    right: 5%;
+    bottom: 2%;
+    font-size: 0.7vw;
+    font-family: centuryGothicBold;
+    color: rgb(255, 255, 255);
+}
+
+#twitter {
+    position: absolute;
+    width: 35px;
+    height: 30px;
+    bottom: 5%;
+    right: 8%;
+    z-index: 999;
+}
+
+#twitter:hover {
+    transform: scale(1.25);
+}
+
+#instagram {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    bottom: 5%;
+    right: 5%;
+    z-index: 999;
+}
+
+#instagram:hover {
+    transform: scale(1.25);
+}
+
+.scrollClick{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 999;
+}
+
+/*Took Scroll Down Arrow From Matthew Hirsch:  https://codepen.io/matthewhirsch/pen/qOxmoz  */
+.scroll-down{   
+    position: absolute;
+    left: 35px;
+    top: 55px;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    -webkit-transform: translate(-50%, 0%) rotate(45deg);
+    -moz-transform: translate(-50%, 0%) rotate(45deg);
+    transform: translate(-50%, 0%) rotate(45deg);
+    -webkit-animation: fade_move_down 4s ease-in-out infinite;
+    -moz-animation: fade_move_down 4s ease-in-out infinite;
+    animation: fade_move_down 4s ease-in-out infinite;
+}
+
+@-webkit-keyframes fade_move_down {
+  0%   { -webkit-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { -webkit-transform:translate(0,10px) rotate(45deg); opacity: 0; }
+}
+@-moz-keyframes fade_move_down {
+  0%   { -moz-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { -moz-transform:translate(0,10px) rotate(45deg); opacity: 0; }
+}
+@keyframes fade_move_down {
+  0%   { transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { transform:translate(0,10px) rotate(45deg); opacity: 0; }
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+/* Section 2 -------------------------------------------------------------------------------------------- */
+.whiteSlider{
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all 0.7s;
+}
+
+.cta{
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin:0 auto;
+    transition: all 1.5s;
+    cursor: pointer;
+    opacity: 0;
+}
+
+#timerSlider{
+    background-color: rgb(255, 255, 255);
+    left: -50%;
+}
+
+#rulesSlider{
+    background-color: rgb(255, 255, 255);
+    right: -50%;
+}
+
+#timerCont{
+    width: 40%;
+    height: 90%;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    display: block;
+}
+
+#rulesCont{
+    width: 40%;
+    height: 90%;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    display: block;
+}
+
+#sec2{
+    background-color: rgb(145,174,255);
+    background: linear-gradient(to bottom, rgba(145,174,255,1) 0%,rgba(115,145,229,1) 74%,rgba(66,90,162,1) 100%);
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+/* Section 3-------------------------------------------------------------------------------------------- */
+#gameplayIconCont{
+    
+    width: 35%;
+    height: 90%;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+}
+
+.gameplayIcon{
+    width: 50%;
+    height: 25%;
+    transition: all 0.5s;
+    position: absolute;
+    right: -80%;
+}
+
+.gameplayIcon:hover{
+    transform: scale(1.2);
+}
+
+#slider{
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width:60%;
+    height:90%;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 1s;
+    border: 10px solid black;
+    border-radius: 5%;
+}
+
+#boardImagesCont {
+    position: absolute;
+    display: flex;
+    transition: all 1s;
+}
+
+.arrow{
+    position:absolute;
+    width: 4%;
+    height: 8%;
+	z-index:999;
+    top: 45%;
+    cursor: pointer;
+    transform: scale(1.00);
+    transition: all 1s;
+    opacity: 0;
+}
+
+.arrow:hover{
+    transform: scale(1.15);
+}
+
+#leftArrow{
+    left: 3.5%;
+}
+
+#rightArrow{
+    left: 63.5%;
+}
+
+#sec3{ 
+    background-color: rgb(166,3,169);
+    background: linear-gradient(to bottom, rgba(166,3,169,1) 0%,rgba(142,2,144,1) 71%,rgba(108,0,110,1) 100%);
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+/* Section 4-------------------------------------------------------------------------------------------- */
+
+#sec4{
+    background: rgb(115,115,115);
+    background: linear-gradient(to bottom, rgba(115,115,115,1) 0%,rgba(97,97,97,1) 17%,rgba(80,80,80,1) 47%,rgba(49,49,49,1) 69%,rgba(49,49,49,1) 69%,rgba(36,36,36,1) 86%,rgba(24,24,24,1) 100%);
+}
+
+/*Top Circle Switches----*/
+#switchCont {
+    width: 15%;
+    height: 7%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 2%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.switch {
+    background-color: rgb(0, 0, 0);
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    margin: 0 20px;
+    transition: all 0.3s;
+}
+
+#s1 {
+    background-color: red;
+}
+/*----------------------*/
+
+
+.infoCont {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 2s;
+    color:  rgb(255, 255, 255);
+
+}
+
+/*Slide 1 ------------------------*/
+
+#info1 {
+    opacity: 1;
+}
+
+#welcome {
+    position: absolute;
+    left: 5%;
+    top: -20%;
+    opacity: 0;
+    font-size: 2vw;
+    width: 35%;
+    text-transform: capitalize;
+    font-family: centuryGothicBold;
+    transition: all 3s;
+}
+
+#narrativeCont {
+    position: absolute;
+    left: 5%;
+    top: 33%;
+    width: 45%;
+    height: 100%;
+    opacity: 0;
+    transition: all 4s;
+    
+}
+
+#narrative {
+    font-size: 1vw;
+    font-family: centuryGothic;
+     
+}
+
+#plantMonster {
+    position: absolute;
+    width: 40%;
+    height: 75%;
+    right: -10%;
+    bottom: -5%;
+    transform: scale(2);
+}
+/*-------------------------------*/
+
+
+/*Slide 2 ------------------------*/
+
+#info2 {
+    opacity: 0;
+}
+
+#whatHappened {
+    position: absolute;
+    left: 5%;
+    top: 13%;
+    opacity: 1;
+    font-size: 2vw;
+    width: 35%;
+    text-transform: capitalize;
+    font-family: centuryGothicBold;
+    transition: all 3s;
+}
+
+#narrativeCont2 {
+    position: absolute;
+    left: 5%;
+    top: 20%;
+    width: 33%;
+    height: 100%;
+    opacity: 1;
+    transition: all 4s;
+    
+}
+
+#narrative2 {
+    font-size: 1vw;
+    font-family: centuryGothic;
+     
+}
+
+#badIcarus {
+    position: absolute;
+    bottom: 50%;
+    left: 5%;
+    font-size: 3em;
+    font-family: daysLater;
+    text-align: center;
+     
+}
+
+#pet {
+    position: absolute;
+    width: 22%;
+    height: 45%;
+    left: 13%;
+    bottom: 10%;
+}
+
+#petStatic {
+    position: absolute;
+    width: 40%;
+    height: 75%;
+    right: -0%;
+    bottom: -5%;
+    transform: scale(2);
+}
+/*-------------------------------*/
+
+
+/*Slide 3 ------------------------*/
+#info3 {
+    opacity: 0;
+}
+
+#onlyOne {
+    position: absolute;
+    left: 5%;
+    top: 13%;
+    opacity: 1;
+    font-size: 2vw;
+    width: 90%;
+    text-transform: capitalize;
+    font-family: centuryGothicBold;
+}
+
+#narrativeCont3 {
+    position: absolute;
+    left: 5%;
+    top: 22%;
+    width: 30%;
+    height: 100%;
+    
+}
+
+#narrative3 {
+    font-size: 1vw;
+    font-family: centuryGothic;
+     
+}
+
+#ratArmy {
+    position: absolute;
+    width: 45%;
+    height: 60%;
+    right: 17%;
+    bottom: -5%;
+    transform: scale(2);
+}
+/*-------------------------------*/
+
+
+/*Slide 4 ------------------------*/
+#info4 {
+    opacity: 0;
+}
+
+#unforeseenChanges {
+    position: absolute;
+    right: 20%;
+    top: 15%;
+    opacity: 1;
+    font-size: 2vw;
+    width: 35%;
+    text-transform: capitalize;
+    font-family: centuryGothicBold;
+}
+
+#narrativeCont4 {
+    position: absolute;
+    right: 10%;
+    top: 23%;
+    width: 45%;
+    height: 100%;
+    
+}
+
+#narrative4 {
+    font-size: 1vw;
+    font-family: centuryGothic;
+     
+}
+
+#shark {
+    position: absolute;
+    width: 38%;
+    height: 70%;
+    left: 5%;
+    bottom: -1%;
+    transform: scale(2);
+}
+/*-------------------------------*/
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+/* Section 5-------------------------------------------------------------------------------------------- */
+#board{
+    width: 61%;
+    height: 110%;
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -5%;
+}
+
+#silCont{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0%;
+    transition: all 1s;
+}
+
+.silSize{
+    width: 20%;
+    height: 55%;
+    position: absolute;
+    top: 25%;
+    transition: all 1s;
+    opacity: 0;
+}
+
+#silDelayHover {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+#charInfoCont{
+    
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    display: none;
+    opacity: 0;
+    transition: all 0.5s
+}
+
+#labMenuCont{
+    width: 100%;
+    height: 15%;
+    background-color: black;
+    top: 0px;
+    position: absolute;
+}
+
+#labMenu{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+
+.lab{
+    color: rgb(255, 255, 255);
+    font-family: daysLater;
+    font-size: 1vw;
+    list-style: none;
+    text-align: center;
+    width: 15%;
+    height: 100%;
+    padding-top: 1%;
+    margin: 0px;
+    position: absolute;
+}
+
+#closeCont{
+    position: absolute;
+    width: 10%;
+    height: 50%;
+    top: 30%;
+    right: 5%;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+
+#closeCont:hover {
+    transform: rotate(5deg);
+}
+
+#close {
+    width: 75%;
+    height: 90%;
+    transform: scale(2.0)
+}
+
+
+
+.charSlide{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.charArrow{
+    width: 6%;
+    height: 12%;
+    position: absolute;
+    top: 55%;
+    z-index: 999;
+    transition: all 0.5s;
+    cursor: pointer;
+    
+}
+
+.charArrow:hover{
+    
+    transform: scale(1.25);
+    
+}
+
+#charLeftArrow{
+    left: 10px;
+}
+
+#charRightArrow{
+    right: 10px;
+}
+
+.charSize{
+    width: 50%;
+    height: 150%;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    transition: all 2s;
+    opacity: 1;
+}
+
+#boardLocation{
+    width: 10%;
+    height: 18%;
+    position: absolute;
+    right: 18%;
+    top: 30%;
+    z-index: 999;
+
+}
+
+#charTextCont{
+    position: absolute;
+    width: 30%;
+    top: 31%;
+    right: 22%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border-radius: 15%;
+    padding: 3%;
+}
+
+#charTitle{
+    
+    font-size: 2.25vw;
+    font-family: daysLater;
+    margin-bottom: 2%;
+}
+
+#charNarrative{
+    font-size: 0.8vw;
+    font-family: centuryGothic;
+    width: 85%;
+}
+
+#sec5{
+    transition: all 2s;
+    background-color: rgb(240,240,240);
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+/* Section 6-------------------------------------------------------------------------------------------- */
+#sec6{
+    background-color: rgb(235,166,93);
+    background: linear-gradient(to bottom, rgba(235,166,93,1) 0%,rgba(225,143,61,1) 18%,rgba(212,139,62,1) 47%,rgba(218,115,4,1) 69%,rgba(218,115,4,1) 69%,rgba(179,94,3,1) 86%,rgba(141,74,3,1) 100%);
+    overflow: hidden;
+}
+
+#bg1 {
+    position: absolute;
+    bottom: -5%;
+    left: -2%;
+    width: 50%;
+    height: 25%;
+}
+
+#bg2 {
+    position: absolute;
+    top: -5%;
+    right: -2%;
+    transform: rotate(180deg);
+    width: 50%;
+    height: 25%;
+}
+
+#slider2{
+    position: absolute;
+    right: 7%;
+    top: 5%;
+    width:60%;
+    height:90%;
+    overflow: hidden;
+    opacity: 1;
+    border: 7px solid white;
+    border-radius: 5%;
+}
+
+#merch {
+    position: absolute;
+    left: 0;
+    display: flex;
+    transition: all 1s;
+}
+
+#leftArrow2{
+    left: 31%;
+}
+
+#rightArrow2{
+    left: 90.5%;
+}
+
+#merchInfoCont {
+    position: absolute;
+    left: 3%;
+    top: -100%;
+    color: rgb(255, 255, 255);
+    width: 35%;
+    font-family: centuryGothicBold;
+    background-color: rgb(0, 0, 0);
+    padding: 15px;
+    transition: 1s all;
+}
+
+#merchHeader {
+    text-transform: capitalize;
+    font-size: 2vw;
+}
+
+#merchNarrativeCont {
+    position: absolute;
+    left: -200%;
+    top: 120%;
+    width: 75%;
+    height: 100%;
+    opacity: 1;
+    font-size: 0.5vw;
+    background-color: rgb(0, 0, 0);
+    padding: 15px;
+    transition: 1.5s all;
+    
+}
+
+#merchNarrative {
+    font-size: 1vw;
+}
+
+#twitter2 {
+    position: absolute;
+    width: 65px;
+    height: 60px;
+    bottom: 25%;
+    left: 5%;
+    z-index: 999;
+}
+
+#twitter2:hover {
+    transform: scale(1.25);
+}
+
+#instagram2 {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: 25%;
+    left: 10%;
+    z-index: 999;
+}
+
+#instagram2:hover {
+    transform: scale(1.25);
+}
+
+#purchaseCTA {
+    font-size: 0.8vw;
+    position: absolute;
+    left: 4%;
+    width: 25%;
+    bottom: 5%;
+    color: rgb(255, 255, 255);
+    font-family: centuryGothicBold;
+}
+
+#t1 {
+    margin-bottom: 15px;
+}
+/* -------------------------------------------------------------------------------------------- */

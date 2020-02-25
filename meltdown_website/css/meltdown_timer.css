@@ -1,0 +1,460 @@
+@font-face {
+  font-family: daysLater;
+  src: url(../fonts/28DaysLater.ttf);
+}            
+
+@font-face {
+  font-family: centuryGothic;
+  src: url(../fonts/centuryGothic.ttf);
+}
+
+@font-face {
+  font-family: centuryGothicBold;
+  src: url(../fonts/gothicb.ttf);
+}
+          
+@font-face {
+  font-family: digitalClock;
+  src: url(../fonts/Open24DisplaySt.ttf);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+a {
+    color: black;
+}
+
+#gameTitle {
+    font-family: daysLater;
+    font-size: 3em;
+    position: absolute;
+    left: 25px;
+    bottom: -2%;
+    z-index: 999;
+}
+
+#titleNuke {
+    font-family: daysLater;
+    font-size: 8em;
+    position: absolute;
+    left: 25px;
+    top: -8%;
+    color: rgb(139, 62, 45);
+    z-index: 999;
+    opacity: 0.2;
+}
+
+#titleTele {
+    font-family: daysLater;
+    font-size: 8em;
+    position: absolute;
+    right: 25px;
+    top: -8%;
+    color: rgb(24, 111, 198);
+    z-index: 999;
+    opacity: 0.2;
+}
+
+#fullscreenMessage {
+    font-family: daysLater;
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+    margin: 0px;
+    padding: 0px;
+    color: #717171;
+    transition: opacity 0.5s;
+    z-index: 999;
+}
+
+.messageToggle {
+    opacity: 0;
+}
+
+#btnMid1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    transition: all 1.0s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -15%;
+    transform: scale(4);
+    z-index: 999;
+}
+
+#blackBar {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    width: 15px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: black;
+    z-index: 998;
+}
+
+#grayBox {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;;
+    height: 100%;
+    z-index: 997;
+    background-color: rgb(21, 21, 21);
+    opacity: 0.6;
+    transition: all 1s;
+}
+
+#grayBoxMessage {
+    font-family: daysLater;
+    font-size: 3em;
+    position: absolute;
+    right: 25px;
+    color: #6d6d6d;
+    bottom: -3%;
+    transition: all 1s;
+}
+
+#playIcon {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 20px solid white;
+    border-bottom: 10px solid transparent;
+    position: relative;
+    top: 15px;
+    left: 17px;
+}
+
+#playCont {
+    opacity: 0;
+    display: none;
+}
+
+#pauseCont {
+    width: 100%;
+    height: 100%;
+    transition: all 1.0s;
+    position: relative;
+    opacity: 1;
+}
+
+.pauseBar {
+    width: 7px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    top: 15px;
+}
+
+#pauseBar1 {
+    left: 16px;
+}
+
+#pauseBar2 {
+    left: 27px;
+}
+
+#restartCont {
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 999;
+}
+
+#restartIcon {
+    width: 45px;
+    height: 45px;
+    margin-top: 3px;
+    transition: all 0.5s;
+}
+
+
+
+/*Timer 30:00--------------------------------------------------------------------------------------------------- */
+#bgNuke {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;;
+    height: 100%;
+    background-color: rgb(170, 75, 53);
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+#contNuke {
+    position: absolute;
+    left: 12%;
+    top: 30%;
+    width: 25%;
+    transform-origin: 50% 50%;
+    transition: all 3s;
+}
+
+#timerHolderNuke{
+    font-family: digitalClock;
+    position: relative;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    width:100%;
+    font-size: 7em;
+    padding-bottom: 5%;
+    transition: all 0.5s;
+    transform-origin: 50% 50%;
+}
+
+.glowNuke{
+    -webkit-animation: timerHolderNuke 1s ease-in-out infinite alternate;
+    -moz-animation: timerHolderNuke 1s ease-in-out infinite alternate;
+    animation: timerHolderNuke 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes timerHolderNuke {
+  from {
+    text-shadow: 0 0 10px rgb(0, 0, 0), 0 0 20px rgb(0, 0, 0), 0 0 30px rgb(0, 0, 0), 0 0 40px rgb(0, 0, 0), 0 0 50px rgb(0, 0, 0), 0 0 60px rgb(0, 0, 0), 0 0 70px rgb(255, 8, 65);
+  }
+  to {
+    text-shadow: 0 0 20px rgb(170, 75, 53), 0 0 30px rgb(170, 75, 53), 0 0 40px rgb(170, 75, 53), 0 0 50px rgb(170, 75, 53), 0 0 60px rgb(170, 75, 53), 0 0 70px rgb(170, 75, 53), 0 0 80px rgb(170, 75, 53);
+  }
+}
+
+.btnMidNuke {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    margin-top: 25px;
+    overflow: hidden;
+    transition: all 1.0s;
+    position: relative;
+    left: 45%;
+}
+
+#btnMid2Nuke {
+    margin-top: -50px;
+    margin-left: 20%;
+    opacity: 0;
+}
+
+#playContNuke {
+    width: 100%;
+    height: 100%;
+    transition: opacity 1.0s;
+}
+
+#playIconNuke {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 20px solid white;
+    border-bottom: 10px solid transparent;
+    position: relative;
+    top: 15px;
+    left: 17px;
+}
+
+#pausedMessageNuke {
+    font-family: daysLater;
+    padding: 0px;
+    font-size: 2.5em;
+    color: #717171;
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: absolute;
+    left: 25px;
+    top: 0;
+    z-index: 999;
+}
+
+#pauseContNuke {
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+    transition: all 1.0s;
+    position: relative;
+}
+
+.pauseBarNuke {
+    width: 7px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    top: 15px;
+}
+
+#pauseBar1Nuke {
+    left: 16px;
+}
+
+#pauseBar2Nuke {
+    left: 27px;
+}
+
+#restartContNuke {
+    width: 100%;
+    height: 100%;
+}
+
+#restartIconNuke {
+    width: 45px;
+    height: 45px;
+    margin-top: 3px;
+    transition: all 0.5s;
+}
+/* --------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+/*Timer 5:00--------------------------------------------------------------------------------------------------- */
+#bgTele {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;;
+    height: 100%;
+    background-color: rgb(24, 135, 245);
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+#contTele {
+    position: absolute;
+    right: 12%;
+    top: 30%;
+    z-index: 900;
+    width: 25%;
+    transform-origin: 50% 50%;
+    transition: all 3s;
+}
+
+#timerHolderTele{
+    font-family: digitalClock;
+    position: relative;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    font-size: 7em;
+    transition: all 0.5s;
+    z-index: 900;
+    width:100%;
+    padding-bottom: 5%;
+    
+}
+
+.glowTele{
+    -webkit-animation: timerHolderTele 1s ease-in-out infinite alternate;
+    -moz-animation: timerHolderTele 1s ease-in-out infinite alternate;
+    animation: timerHolderTele 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes timerHolderTele {
+  from {
+    text-shadow: 0 0 10px rgb(0, 0, 0), 0 0 20px rgb(0, 0, 0), 0 0 30px rgb(0, 0, 0), 0 0 40px rgb(0, 0, 0), 0 0 50px rgb(0, 0, 0), 0 0 60px rgb(0, 0, 0), 0 0 70px rgb(24, 135, 245);
+  }
+  to {
+    text-shadow: 0 0 20px rgb(24, 135, 245), 0 0 30px rgb(24, 135, 245), 0 0 40px rgb(24, 135, 245), 0 0 50px rgb(24, 135, 245), 0 0 60px rgb(24, 135, 245), 0 0 70px rgb(24, 135, 245), 0 0 80px rgb(24, 135, 245);
+  }
+}
+
+.btnMidTele {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    margin-top: 25px;
+    overflow: hidden;
+    transition: all 1.0s;
+    left: 45%;
+}
+
+#btnMid2Tele {
+    margin-top: -50px;
+    margin-left: 22%;
+    opacity: 0;
+}
+
+#playContTele {
+    width: 100%;
+    height: 100%;
+    transition: opacity 1.0s;
+}
+
+#playIconTele {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 20px solid white;
+    border-bottom: 10px solid transparent;
+    position: relative;
+    top: 15px;
+    left: 17px;
+}
+
+#pausedMessageTele {
+    font-family: daysLater;
+    padding: 0px;
+    font-size: 2.5em;
+    color: #717171;
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: absolute;
+    right: 25px;
+    top: 0;
+    z-index: 999;
+}
+
+#pauseContTele {
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+    transition: all 1.0s;
+    position: relative;
+}
+
+.pauseBarTele {
+    width: 7px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    top: 15px;
+}
+
+#pauseBar1Tele {
+    left: 16px;
+}
+
+#pauseBar2Tele {
+    left: 27px;
+}
+
+#restartContTele {
+    width: 100%;
+    height: 100%;
+}
+
+#restartIconTele {
+    width: 45px;
+    height: 45px;
+    margin-top: 3px;
+    transition: all 0.5s;
+}
+/* --------------------------------------------------------------------------------------------------- */

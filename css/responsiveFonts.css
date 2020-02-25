@@ -1,0 +1,253 @@
+/* Font Sizes Adjusted By Media Below ------------------------------------------------ */
+
+.f-xxl{
+    transition: 0.5s all;
+    padding: 0;
+    margin: 0;
+    font-size: 30px;  /* Defaults to Mobile Sized Font */
+}
+
+.f-xl{
+    transition: 0.5s all;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;  /* Defaults to Mobile Sized Font */
+}
+
+.f-lg{
+    transition: 0.5s all;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;  /* Defaults to Mobile Sized Font */
+}
+
+.f-md{
+    transition: 0.5s all;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;  /* Defaults to Mobile Sized Font */
+}
+
+.f-sm{
+    transition: 0.5s all;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;  /* Defaults to Mobile Sized Font */
+}
+
+.f-xs{
+    transition: 0.5s all;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;  /* Defaults to Mobile Sized Font */
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+
+
+@media only screen and (max-width: 400px) {
+    
+    .f-xxl{
+        font-size: 33px; 
+    }
+    .f-xl{
+        font-size: 28px; 
+    }
+    .f-lg{
+        font-size: 23px;
+    }
+    .f-md{
+        font-size: 18px;
+    }
+    .f-sm{
+        font-size: 15px;
+    }
+    .f-xs{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 401px) {
+    
+    .f-xxl{
+        font-size: 35px; 
+    }
+    .f-xl{
+        font-size: 30px; 
+    }
+    .f-lg{
+        font-size: 25px;
+    }
+    .f-md{
+        font-size: 20px;
+    }
+    .f-sm{
+        font-size: 17px;
+    }
+    .f-xs{
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 650px) {
+    
+    .f-xxl{
+        font-size: 36px; 
+    }
+    .f-xl{
+        font-size: 31px; 
+    }
+    .f-lg{
+        font-size: 26px;
+    }
+    .f-md{
+        font-size: 21px;
+    }
+    .f-sm{
+        font-size: 18px;
+    }
+    .f-xs{
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    
+    .f-xxl{
+        font-size: 41px; 
+    }
+    .f-xl{
+        font-size: 36px; 
+    }
+    .f-lg{
+        font-size: 31px;
+    }
+    .f-md{
+        font-size: 24px;
+    }
+    .f-sm{
+        font-size: 20px;
+    }
+    .f-xs{
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    
+    .f-xxl{
+        font-size: 45px; 
+    }
+    .f-xl{
+        font-size: 40px; 
+    }
+    .f-lg{
+        font-size: 35px;
+    }
+    .f-md{
+        font-size: 26px;
+    }
+    .f-sm{
+        font-size: 22px;
+    }
+    .f-xs{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1680px) {
+
+    .f-xxl{
+        font-size: 50px; 
+    }
+    .f-xl{
+        font-size: 45px; 
+    }
+    .f-lg{
+        font-size: 40px;
+    }
+    .f-md{
+        font-size: 30px;
+    }
+    .f-sm{
+        font-size: 24px;
+    }
+    .f-xs{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .f-heading{
+        font-size: 80px; 
+    }
+    .f-tabs{
+        font-size: 21px; 
+    }
+    
+    
+    .f-xxl{
+        font-size: 55px; 
+    }
+    .f-xl{
+        font-size: 50px; 
+    }
+    .f-lg{
+        font-size: 45px;
+    }
+    .f-md{
+        font-size: 30px;
+    }
+    .f-sm{
+        font-size: 26px;
+    }
+    .f-xs{
+        font-size: 22px;
+    }
+}
+
+@media only screen and (min-width: 2560px) {
+    
+    .f-xxl{
+        font-size: 64px; 
+    }
+    .f-xl{
+        font-size: 59px; 
+    }
+    .f-lg{
+        font-size: 54px;
+    }
+    .f-md{
+        font-size: 40px;
+    }
+    .f-sm{
+        font-size: 30px;
+    }
+    .f-xs{
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 4096px) {
+    
+    .f-xxl{
+        font-size: 72px; 
+    }
+    .f-xl{
+        font-size: 67px; 
+    }
+    .f-lg{
+        font-size: 62px;
+    }
+    .f-md{
+        font-size: 45px;
+    }
+    .f-sm{
+        font-size: 30px;
+    }
+    .f-xs{
+        font-size: 28px;
+    }
+}
+
